@@ -1,0 +1,44 @@
+{
+  "name": "Punjab University New Campus WebGIS",
+  "short_name": "PU WebGIS",
+  "description": "Campus ka digital map, layer editing aur real-time geofencing.",
+  "lang": "ur-PK",
+  "dir": "ltr",
+  "id": "/",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#1a3c6e",
+  "theme_color": "#1a3c6e",
+  "categories": ["education", "navigation", "utilities"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Campus map",
+      "short_name": "Map",
+      "url": "/index.html",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

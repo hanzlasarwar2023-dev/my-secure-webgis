@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Secrets - never commit these
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Backups and local exports
+backups/
+*.sql.bak

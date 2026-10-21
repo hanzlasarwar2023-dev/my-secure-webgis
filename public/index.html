@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ur-PK">
+<head>
+  <meta charset="utf-8" />
+  <title>Punjab University New Campus - WebGIS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Punjab University New Campus ka digital map, layer editing aur real-time geofencing." />
+  <meta name="theme-color" content="#1a3c6e" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="PU WebGIS" />
+
+  <!-- Styles (local = offline + fast) -->
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="/vendor/leaflet-draw/leaflet.draw.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <!-- Scripts: koi inline script nahi (strict CSP ke liye) -->
+  <script src="/vendor/leaflet/leaflet.js" defer></script>
+  <script src="/vendor/leaflet-draw/leaflet.draw.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/auth.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#map">Map par jao</a>
+
+  <div id="httpsWarn" role="alert" hidden>
+    Location feature ke liye HTTPS zaroori hai - ye page abhi HTTP par chal raha hai.
+  </div>
+
+  <main id="map" role="application" tabindex="0"
+        aria-label="Punjab University New Campus ka map. Pan karke move karein, zoom ke liye plus aur minus buttons use karein."></main>
+
+  <button type="button" id="installBtn" class="btn btn-ok" hidden>App install karein</button>
+
+  <section id="geo" class="panel" aria-labelledby="geoTitle">
+    <h2 id="geoTitle">Geofence</h2>
+    <button type="button" id="trackBtn" class="btn btn-edit">Meri location check karo</button>
+    <p id="status" role="status" aria-live="polite">Map par click karein.</p>
+  </section>
+
+  <!-- Data save karne ka form -->
+  <div id="overlay">
+    <div id="form" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+      <h3 id="formTitle">Naya feature</h3>
+
+      <label for="fName">Naam (zaroori)</label>
+      <input id="fName" type="text" required autocomplete="off" placeholder="Jaise: Department of Physics" />
+
+      <label for="fCategory">Category</label>
+      <select id="fCategory">
+        <option>Department</option>
+        <option>Hostel</option>
+        <option>Library</option>
+        <option>Cafeteria</option>
+        <option>Sports</option>
+        <option>Road</option>
+        <option>Other</option>
+      </select>
+
+      <label for="fDesc">Description</label>
+      <textarea id="fDesc" placeholder="Is jagah ke baare mein likhein (optional)"></textarea>
+
+      <div class="actions">
+        <button type="button" class="btn btn-edit" id="fSave">Save</button>
+        <button type="button" class="btn btn-del" id="fCancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

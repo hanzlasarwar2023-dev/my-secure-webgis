@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ur-PK">
+<head>
+  <meta charset="utf-8" />
+  <title>Boundary Banane Ka Tool - PU WebGIS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a3c6e" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script src="/vendor/leaflet/leaflet.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/auth.js" defer></script>
+  <script src="/js/draw.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#drawPanel">Boundary tool par jao</a>
+
+  <main id="map" role="application" tabindex="0"
+        aria-label="Campus boundary banane ka map. Har point ke liye map par click karein."></main>
+
+  <section id="drawPanel" aria-labelledby="drawTitle">
+    <h2 id="drawTitle">Campus ki boundary banayein</h2>
+    <p class="hint">Campus ke bahari kinare par ek ek click karte jayein (ghadi ki disha mein).</p>
+    <p id="count" role="status" aria-live="polite">Points: 0</p>
+
+    <p>
+      <button type="button" class="btn btn-edit" id="undoBtn">Aakhri point hatao</button>
+      <button type="button" class="btn btn-del" id="clearBtn">Sab hatao</button>
+      <button type="button" class="btn btn-ok" id="copyBtn">SQL copy karo</button>
+    </p>
+
+    <label for="sql" class="sr-only">Boundary ka SQL</label>
+    <textarea id="sql" readonly></textarea>
+  </section>
+</body>
+</html>

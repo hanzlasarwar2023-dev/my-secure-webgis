@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ur-PK">
+<head>
+  <meta charset="utf-8" />
+  <title>PU WebGIS - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Punjab University New Campus WebGIS login." />
+  <meta name="theme-color" content="#1a3c6e" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="PU WebGIS" />
+
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script src="/js/common.js" defer></script>
+  <script src="/js/login.js" defer></script>
+</head>
+<body>
+  <main class="login-wrap">
+    <div class="card">
+      <h1>PU WebGIS</h1>
+      <p class="sub">Punjab University New Campus</p>
+
+      <div class="tabs" role="group" aria-label="Login karein ya naya account banayein">
+        <button type="button" id="tLogin" class="on" aria-pressed="true">Login</button>
+        <button type="button" id="tReg" aria-pressed="false">Naya account</button>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <label for="u">Username</label>
+        <input id="u" name="username" autocapitalize="none" autocomplete="username"
+               spellcheck="false" required />
+
+        <label for="p">Password</label>
+        <input id="p" name="password" type="password" autocomplete="current-password"
+               required />
+
+        <div id="joinRow" hidden>
+          <label for="j">Join code</label>
+          <input id="j" name="joinCode" autocapitalize="none" autocomplete="off" />
+        </div>
+
+        <button type="submit" id="go">Login</button>
+      </form>
+
+      <p id="msg" role="status" aria-live="polite"></p>
+    </div>
+  </main>
+</body>
+</html>

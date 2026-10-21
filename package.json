@@ -1,0 +1,37 @@
+{
+  "name": "pu-webgis",
+  "version": "2.0.0",
+  "description": "Punjab University New Campus WebGIS - secure, installable PWA",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "migrate": "node scripts/migrate.js",
+    "check": "node --check server.js && node --check scripts/migrate.js && node --check public/auth.js && node --check public/sw.js && node --check public/js/common.js && node --check public/js/app.js && node --check public/js/login.js && node --check public/js/draw.js && node --check public/js/offline.js"
+  },
+  "keywords": [
+    "webgis",
+    "postgis",
+    "pwa",
+    "leaflet",
+    "geofencing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.1"
+  }
+}

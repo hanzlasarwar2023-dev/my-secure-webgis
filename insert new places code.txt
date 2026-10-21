@@ -1,0 +1,2 @@
+INSERT INTO public.places (name, category, geom) VALUES
+('NAYA NAAM', 'Department', ST_SetSRID(ST_MakePoint(LONGITUDE, LATITUDE), 4326));
